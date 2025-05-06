@@ -1,0 +1,7 @@
+.icone{
+    color:white;
+    font-size:1.7vw;
+}
+.icone:hover{
+    cursor: pointer;
+}

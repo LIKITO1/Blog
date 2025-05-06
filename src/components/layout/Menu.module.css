@@ -1,0 +1,32 @@
+.icone{
+    font-size: 3.5vw;
+    color: white;
+    width:3vw;
+    height: 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icone:hover{
+    cursor: pointer;
+}
+.principal{
+    background: black;
+    width: 5vw;
+    border-radius: 50vw;
+    position: fixed;
+}
+.item{
+    opacity: 1;
+    animation: descer 1s ease;
+}
+@keyframes descer{
+    0%{
+        opacity: 0;
+        transform: translateY(0);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(1);
+    }
+}
