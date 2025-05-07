@@ -5,3 +5,29 @@
 .icone:hover{
     cursor: pointer;
 }
+.star1{
+    display: none;
+}
+.star{
+    color: white;
+    position: absolute;
+    font-size: 3vw;
+    top: 75%;
+    right: 10%;
+    opacity: 0;
+    animation: aparecer 1s ease;
+}
+@keyframes aparecer{
+    0%{
+        top:75%;
+        right: 10%;
+        opacity: 0;
+        transform: scale(1);
+    }
+    100%{
+        top: 40%;
+        right: 45%;
+        opacity: 1;
+        transform:scale(1.5)
+    }
+}
