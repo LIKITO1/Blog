@@ -1,6 +1,8 @@
 const express=require("express");
 const app=express();
 const mysql=require("mysql2")
+const cors=require("cors")
+app.use(cors())
 const pool=mysql.createPool({
     host:"localhost",
     password:"lucas312@Lucas",

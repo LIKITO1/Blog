@@ -21,7 +21,7 @@ function Menu(){
                 {menu&&(
                 <div className={`${styles.items} d-flex align-items-center justify-content-around flex-column my-2 mx-3 gap-5`}>
                     <Link className={`${styles.icone} ${styles.item}`} to="/"><i className={`bi bi-house`}></i></Link>
-                    <Link className={`${styles.icone} ${styles.item}`} to="/"><i className={`bi bi-brush`}></i></Link>
+                    <Link className={`${styles.icone} ${styles.item}`} to="/criar"><i className={`bi bi-patch-plus-fill`}></i></Link>
                 </div>
                 )}
         </div>

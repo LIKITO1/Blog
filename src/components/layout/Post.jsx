@@ -7,19 +7,22 @@ function Post(){
     const [images,setImages]=useState([])
     const [image,setImage]=useState()
     useEffect(()=>{
-    async function reqImage(){
+        async function req(){
         await fetch("http://localhost:5000/api",{
             method:"GET"
         }).then((response)=>response.json()).then((res)=>{
-            res.forEach((valor)=>{
-                images.push(valor?.src)
-            })
-            let random=Math.floor(Math.random()*images.length);
-            setImage(images[random])
+            setImages(res)
         })
     }
-    reqImage()
-},[images])
+    req()
+    },[])
+    const [random,setRandom]=useState(Math.floor(Math.random()*images.length))
+    useEffect(()=>{
+        setImage(images[random]?.src)
+    },[images])
+    useEffect(()=>{
+        setImage(images[random]?.src)
+    },[random])
     function like(){
         if(!liked){
             setLiked(true)
@@ -31,6 +34,12 @@ function Post(){
             setStar("star1")
         }
     }
+    function trocar(){
+        setRandom(Math.floor(Math.random()*images.length));
+    }
+    function salvar(){
+        console.log("Salvar")
+    }
     return(
         <>
             <div className={`d-flex flex-column card bg-dark p-4 border-white gap-2`}>
@@ -38,8 +47,12 @@ function Post(){
                 <div className={`d-flex flex-row gap-3`}>
                     <i className={`bi bi-${classe} ${styles.icone}`} onClick={like}></i>
                     <i className={`bi bi-share ${styles.icone}`}></i>
+                    <i className={`bi bi-floppy ${styles.icone}`} onClick={salvar}></i>
                 </div>
                 <i className={`bi bi-star-fill ${styles[star]}`}></i>
+            </div>
+            <div className="d-flex flex-column mx-4 gap-5">
+                <i className={`bi bi-arrow-repeat ${styles.btn}`} onClick={trocar}></i>
             </div>
         </>
     )
