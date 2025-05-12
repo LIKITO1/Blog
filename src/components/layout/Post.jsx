@@ -19,10 +19,7 @@ function Post(){
     const [random,setRandom]=useState(Math.floor(Math.random()*images.length))
     useEffect(()=>{
         setImage(images[random]?.src)
-    },[images])
-    useEffect(()=>{
-        setImage(images[random]?.src)
-    },[random])
+    },[random,images])
     function like(){
         if(!liked){
             setLiked(true)
@@ -35,7 +32,7 @@ function Post(){
         }
     }
     function trocar(){
-        setRandom(Math.floor(Math.random()*images.length));
+        setRandom(Math.floor(Math.random()*images.length))
     }
     function salvar(){
         console.log("Salvar")
