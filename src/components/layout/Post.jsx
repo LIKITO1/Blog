@@ -5,21 +5,40 @@ function Post(){
     const [classe,setClasse]=useState("star")
     const [star,setStar]=useState("star1")
     const [images,setImages]=useState([])
+    const [dados,setDados]=useState([])
     const [image,setImage]=useState()
+    const [description,setDescription]=useState()
+    const [thisImage,setThisImage]=useState()
+    const [random,setRandom]=useState()
     useEffect(()=>{
-        async function req(){
-        await fetch("http://localhost:5000/api",{
-            method:"GET"
-        }).then((response)=>response.json()).then((res)=>{
-            setImages(res)
-        })
-    }
-    req()
+        try{
+            fetch("http://localhost:5000/api",{
+                method:"GET"
+            }).then((response)=>response.json()).then((res)=>{
+                setDados(res)
+            })
+        }catch(err){
+            console.log(err)
+        }
     },[])
-    const [random,setRandom]=useState(Math.floor(Math.random()*images.length))
     useEffect(()=>{
-        setImage(images[random]?.src)
+        dados.forEach((valor)=>{
+            setImages(e=>[...e,valor?.src])
+        })
+    },[dados])
+    useEffect(()=>{
+        setThisImage(dados.find((valor)=>valor?.src==images[random]))
+        setImage(images[random])
+        console.log(thisImage)
     },[random,images])
+/*     useEffect(()=>{
+        console.log(thisImage?.description)
+    },[thisImage]) */
+    useEffect(()=>{
+        if(images.length!==0){
+            setRandom(Math.floor(Math.random()*images.length))
+        }
+    },[images])
     function like(){
         if(!liked){
             setLiked(true)
