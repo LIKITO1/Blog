@@ -18,6 +18,8 @@ app.get("/api",(req,res)=>{
     })
 })
 app.post("/publicar",(req,res)=>{
-    console.log(req.body)
+    pool.query(`INSERT INTO posts(src,description) VALUES(${req.body?.link},${req.body?.description})`,(err,retorno)=>{
+        if(err)console.log(err);
+    })
 })
 app.listen(5000)

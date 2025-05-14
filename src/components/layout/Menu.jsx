@@ -23,6 +23,7 @@ function Menu(){
                     <Link className={`${styles.icone} ${styles.item}`} to="/"><i className={`bi bi-house`}></i></Link>
                     <Link className={`${styles.icone} ${styles.item}`} to="/criar"><i className={`bi bi-patch-plus-fill`}></i></Link>
                     <Link className={`${styles.icone} ${styles.item}`} to="/my"><i className={`bi bi-columns`}></i></Link>
+                    <Link className={`${styles.icone} ${styles.item}`} to="/settings"><i className={`bi bi-gear-wide`}></i></Link>
                 </div>
                 )}
         </div>

@@ -29,7 +29,6 @@ function Post(){
     useEffect(()=>{
         setThisImage(dados.find((valor)=>valor?.src==images[random]))
         setImage(images[random])
-        console.log(thisImage)
     },[random,images])
 /*     useEffect(()=>{
         console.log(thisImage?.description)
