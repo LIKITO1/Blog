@@ -67,7 +67,7 @@ function Post(){
                 <i className={`bi bi-star-fill ${styles[star]}`}></i>
             </div>
             <div className="d-flex flex-column mx-4 gap-5">
-                <i className={`bi bi-arrow-repeat ${styles.btn}`} onClick={trocar}></i>
+                <i className={`bi bi-arrow-repeat ${styles.but}`} onClick={trocar}></i>
             </div>
         </>
     )

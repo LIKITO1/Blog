@@ -5,6 +5,12 @@ import Account from "./components/layout/Account"
 import Box from "./components/layout/Box"
 function App(){
   const logado=localStorage.getItem("logado")
+  function btnLogin(){
+    window.location="/login"
+  }
+  function btnCadastro(){
+    window.location="/cadastro"
+  }
   return (
     <>
       <div className={`bg-dark h-100 w-100 position-absolute`}>
@@ -19,7 +25,7 @@ function App(){
           )
         }
         {!logado&&(
-          <Box text="Você não está logado" btn1="Teste"/>
+          <Box text="Random Blog" btn1="Login" on1={btnLogin} btn2="Cadastro" on2={btnCadastro}/>
         )}
       </div>
     </>

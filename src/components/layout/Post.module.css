@@ -31,10 +31,10 @@
         transform:scale(1.5)
     }
 }
-.btn{
+.but{
     font-size: 3vw;
     color: white;
 }
-.btn:hover{
+.but:hover{
     cursor:pointer;
 }
