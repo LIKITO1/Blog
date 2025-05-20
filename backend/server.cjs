@@ -22,4 +22,13 @@ app.post("/publicar",(req,res)=>{
         if(err)console.log(err);
     })
 })
+app.post("/logar",(req,res)=>{
+    pool.query("SELECT * FROM users",(err,valor)=>{
+        valor.forEach((user)=>{
+            if(user?.senha==req.body[2]&&user?.email==req.body[1]){
+                res.send({msg:"Logado"})
+            }
+        })
+    })
+})
 app.listen(5000)
